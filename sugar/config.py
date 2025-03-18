@@ -113,13 +113,13 @@ def make_base_sepolia_chain_settings(**kwargs) -> ChainSettings:
     d = {
         "rpc_uri": "https://base-sepolia-rpc.publicnode.com",
         "wrapped_native_token_addr": "0x4200000000000000000000000000000000000006",
-        "sugar_contract_addr": "0x92294D631E995f1dd9CeE4097426e6a71aB87Bcf",
-        "slipstream_contract_addr": "0x0AD09A66af0154a84e86F761313d02d0abB6edd5",
+        "sugar_contract_addr": "0x7C5B8fF7d833020085538F5c4dFdE3B1E03f52A3",
+        "slipstream_contract_addr": "0x1bf5217806feFfe3DF59331A744D2e434baFE5d7",
         "nfpm_contract_addr": "0x827922686190790b37229fd06084350E74485b72",
         "price_oracle_contract_addr": "0x3B06c787711ecb5624cE65AC8F26cde10831eb0C",
-        "router_contract_addr": "0xcF77a3Ba9A5CA399B7c97c74d54e5b1Beb874E43",
-        "token_addr": "0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db",
-        "stable_token_addr": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-        "connector_tokens_addrs": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913,0x940181a94A35A4569E4529A3CDfB74e38FD98631,0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb,0x4621b7a9c75199271f773ebd9a499dbd165c3191,0x4200000000000000000000000000000000000006,0xb79dd08ea68a908a97220c76d19a6aa9cbde4376,0xf7a0dd3317535ec4f4d29adf9d620b3d8d5d5069,0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4,0xcb327b99ff831bf8223cced12b1338ff3aa322ff,0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22,0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452,0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42,0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca,0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+        "router_contract_addr": "0x1B683c08f448eA190Dd9B53EA756aB7B00085DE1",
+        "token_addr": "0x0a3bAc370a60061A5939c72D5165f94FBed18A76",
+        "stable_token_addr": "0x8B56D59cd9b1Ce5dd1Fb2A4e3cA7FBE3043Be42F",
+        "connector_tokens_addrs": "0xc7CFD173944b435405c7196DDca63aC08ae39720,0x833589fcd6edb6e08f4c7c32d4f71b54bda02913,0x940181a94A35A4569E4529A3CDfB74e38FD98631,0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb,0x4621b7a9c75199271f773ebd9a499dbd165c3191,0x4200000000000000000000000000000000000006,0xb79dd08ea68a908a97220c76d19a6aa9cbde4376,0xf7a0dd3317535ec4f4d29adf9d620b3d8d5d5069,0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4,0xcb327b99ff831bf8223cced12b1338ff3aa322ff,0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22,0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452,0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42,0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca,0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
     }
     return make_settings("84532", "BaseSepolia", **{ **d, **kwargs })

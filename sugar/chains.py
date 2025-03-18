@@ -2,7 +2,7 @@
 
 # %% auto 0
 __all__ = ['T', 'require_context', 'require_async_context', 'CommonChain', 'AsyncChain', 'Chain', 'OPChainCommon', 'AsyncOPChain',
-           'OPChain', 'BaseChainCommon', 'AsyncBaseChain', 'BaseChain', 'AsyncOPChainSimnet', 'AsyncBaseChainSimnet']
+           'OPChain', 'BaseChainCommon', 'AsyncBaseChain', 'BaseChain', 'AsyncOPChainSimnet', 'AsyncBaseChainSimnet','AsyncSepoliaBaseChain','BaseSepoliaChain','BaseSepoliaChainCommon']
 
 # %% ../src/chains.ipynb 3
 import asyncio, web3, os
@@ -333,3 +333,14 @@ class AsyncOPChainSimnet(AsyncOPChain):
 
 class AsyncBaseChainSimnet(AsyncBaseChain):
     def __init__(self,  **kwargs): super().__init__(rpc_uri="http://127.0.0.1:4445", **kwargs)
+
+
+class BaseSepoliaChainCommon():
+    usdc: str = normalize_address("0x8B56D59cd9b1Ce5dd1Fb2A4e3cA7FBE3043Be42F")
+    bch: str = normalize_address("0x0a3bAc370a60061A5939c72D5165f94FBed18A76")
+
+class AsyncSepoliaBaseChain(AsyncChain, BaseSepoliaChainCommon):
+    def __init__(self, **kwargs): super().__init__(make_base_chain_settings(**kwargs))
+
+class BaseSepoliaChain(Chain, BaseSepoliaChainCommon):
+    def __init__(self, **kwargs): super().__init__(make_base_chain_settings(**kwargs))
