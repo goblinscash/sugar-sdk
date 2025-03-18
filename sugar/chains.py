@@ -12,7 +12,7 @@ from fastcore.utils import patch
 from web3 import Web3, HTTPProvider, AsyncWeb3, AsyncHTTPProvider, Account
 from web3.eth.async_eth import AsyncContract
 from web3.eth import Contract
-from .config import ChainSettings, make_op_chain_settings, make_base_chain_settings
+from .config import ChainSettings, make_op_chain_settings, make_base_chain_settings, make_base_sepolia_chain_settings
 from .helpers import normalize_address, MAX_UINT256, float_to_uint256, apply_slippage, get_future_timestamp
 from .abi import sugar, slipstream, price_oracle, router
 from .token import Token
@@ -340,7 +340,7 @@ class BaseSepoliaChainCommon():
     bch: str = normalize_address("0x0a3bAc370a60061A5939c72D5165f94FBed18A76")
 
 class AsyncSepoliaBaseChain(AsyncChain, BaseSepoliaChainCommon):
-    def __init__(self, **kwargs): super().__init__(make_base_chain_settings(**kwargs))
+    def __init__(self, **kwargs): super().__init__(make_base_sepolia_chain_settings(**kwargs))
 
 class BaseSepoliaChain(Chain, BaseSepoliaChainCommon):
-    def __init__(self, **kwargs): super().__init__(make_base_chain_settings(**kwargs))
+    def __init__(self, **kwargs): super().__init__(make_base_sepolia_chain_settings(**kwargs))
