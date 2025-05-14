@@ -7,7 +7,7 @@ __all__ = ['base_default_settings', 'ChainSettings', 'validate_settings', 'make_
 # %% ../src/config.ipynb 3
 import os
 from dataclasses import dataclass, make_dataclass
-from .helpers import normalize_address
+from .helpers import normalize_address, ADDRESS_ZERO
 from typing import List
 
 # %% ../src/config.ipynb 4
@@ -96,7 +96,7 @@ def make_op_chain_settings(**kwargs) -> ChainSettings:
 # %% ../src/config.ipynb 9
 def make_base_chain_settings(**kwargs) -> ChainSettings:
     d = {
-        "rpc_uri": "https://mainnet.base.org",
+        "rpc_uri": "https://base-rpc.publicnode.com",
         "wrapped_native_token_addr": "0x4200000000000000000000000000000000000006",
         "sugar_contract_addr": "0x92294D631E995f1dd9CeE4097426e6a71aB87Bcf",
         "slipstream_contract_addr": "0x0AD09A66af0154a84e86F761313d02d0abB6edd5",
@@ -131,7 +131,7 @@ def make_bsc_chain_settings(**kwargs) -> ChainSettings:
         "sugar_contract_addr": "0x78e4CcE7392Ba54ceD253d12aA4Be8dd57aee78e", # LpSugar
         "slipstream_contract_addr": "0x639A5464f1038ad04425a7427D374163CE6A1C27", # Slipstream SugarHelper
         "nfpm_contract_addr": "0xe834c1C6397c107F740fc16a16F0d75Ac7678c81", # NFPM from Slipstream deployment
-        "price_oracle_contract_addr": "0x3B06c787711ecb5624cE65AC8F26cde10831eb0C", # ! not deployed
+        "price_oracle_contract_addr": ADDRESS_ZERO, # ! not deployed
         "router_contract_addr": "0x6BfDe5AFB775541Bc2ac18F97B3Bda5AD22F1aBF", # Aerodrome Router
         "token_addr": "0x558225E240D8C73dF754C48b330DE5f281ee99B9", # GOB
         "stable_token_addr": "0x55d398326f99059fF775485246999027B3197955", # USDT

@@ -135,7 +135,9 @@ class AsyncChain(CommonChain):
     async def get_pools(self) -> List[LiquidityPool]:
         pools, offset, limit = [], 0, self.settings.pool_page_size
         tokens = await self.get_all_tokens()
-        prices = await self.get_prices(tokens)
+        prices = []
+        if self.settings.price_oracle_contract_addr != ADDRESS_ZERO:
+            prices = await self.get_prices(tokens)
         
         while True:
             pools_batch = await self.sugar.functions.all(limit, offset).call()
@@ -295,8 +297,10 @@ class Chain(CommonChain):
     def get_pools(self) -> List[LiquidityPool]:
         pools, offset, limit = [], 0, self.settings.pool_page_size
         tokens = self.get_all_tokens()
-        prices = self.get_prices(tokens)
-        
+
+        if self.settings.price_oracle_contract_addr != ADDRESS_ZERO:
+            prices = self.get_prices(tokens)
+
         while True:
             pools_batch = self.sugar.functions.all(limit, offset).call()
             pools += pools_batch
