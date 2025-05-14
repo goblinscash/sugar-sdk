@@ -123,3 +123,18 @@ def make_base_sepolia_chain_settings(**kwargs) -> ChainSettings:
         "connector_tokens_addrs": "0xc7CFD173944b435405c7196DDca63aC08ae39720,0x833589fcd6edb6e08f4c7c32d4f71b54bda02913,0x940181a94A35A4569E4529A3CDfB74e38FD98631,0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb,0x4621b7a9c75199271f773ebd9a499dbd165c3191,0x4200000000000000000000000000000000000006,0xb79dd08ea68a908a97220c76d19a6aa9cbde4376,0xf7a0dd3317535ec4f4d29adf9d620b3d8d5d5069,0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4,0xcb327b99ff831bf8223cced12b1338ff3aa322ff,0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22,0xc1cba3fcea344f92d9239c08c0568f6f2f0ee452,0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42,0xd9aaec86b65d86f6a7b5b1b0c42ffa531710b6ca,0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
     }
     return make_settings("84532", "BaseSepolia", **{ **d, **kwargs })
+
+def make_bsc_chain_settings(**kwargs) -> ChainSettings:
+    d = {
+        "rpc_uri": "https://bsc-rpc.publicnode.com",
+        "wrapped_native_token_addr": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", # WBNB
+        "sugar_contract_addr": "0x78e4CcE7392Ba54ceD253d12aA4Be8dd57aee78e", # LpSugar
+        "slipstream_contract_addr": "0x639A5464f1038ad04425a7427D374163CE6A1C27", # Slipstream SugarHelper
+        "nfpm_contract_addr": "0xe834c1C6397c107F740fc16a16F0d75Ac7678c81", # NFPM from Slipstream deployment
+        "price_oracle_contract_addr": "0x3B06c787711ecb5624cE65AC8F26cde10831eb0C", # ! not deployed
+        "router_contract_addr": "0x6BfDe5AFB775541Bc2ac18F97B3Bda5AD22F1aBF", # Aerodrome Router
+        "token_addr": "0x558225E240D8C73dF754C48b330DE5f281ee99B9", # GOB
+        "stable_token_addr": "0x55d398326f99059fF775485246999027B3197955", # USDT
+        "connector_tokens_addrs": "0x558225E240D8C73dF754C48b330DE5f281ee99B9,0x205f59C72385C82b2328FC1c7776640C8d10f836,0x767Dc7981a5d58539814110dEA8dd88857164fa1,0xa44319D6232afEAa21A38b040Ca095110ad76d38,0x53b6a051dD3193d4F80c1E66c56316af180755F6,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0x4fAd9b2458634B1E5D679732ca3f6C203e565B13", # GOBV2, tGOB v1, tBCH, tUSDT, tUSDC, WBNB, tETH
+    }
+    return make_settings("56", "Bsc", **{ **d, **kwargs })

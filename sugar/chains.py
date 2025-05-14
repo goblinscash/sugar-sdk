@@ -2,7 +2,8 @@
 
 # %% auto 0
 __all__ = ['T', 'require_context', 'require_async_context', 'CommonChain', 'AsyncChain', 'Chain', 'OPChainCommon', 'AsyncOPChain',
-           'OPChain', 'BaseChainCommon', 'AsyncBaseChain', 'BaseChain', 'AsyncOPChainSimnet', 'AsyncBaseChainSimnet','AsyncSepoliaBaseChain','BaseSepoliaChain','BaseSepoliaChainCommon']
+           'OPChain', 'BaseChainCommon', 'AsyncBaseChain', 'BaseChain', 'BscChainCommon', 'AsyncBscChain', 'BscChain',
+           'AsyncOPChainSimnet', 'AsyncBaseChainSimnet','AsyncSepoliaBaseChain','BaseSepoliaChain','BaseSepoliaChainCommon']
 
 # %% ../src/chains.ipynb 3
 import asyncio, web3, os
@@ -12,7 +13,7 @@ from fastcore.utils import patch
 from web3 import Web3, HTTPProvider, AsyncWeb3, AsyncHTTPProvider, Account
 from web3.eth.async_eth import AsyncContract
 from web3.eth import Contract
-from .config import ChainSettings, make_op_chain_settings, make_base_chain_settings, make_base_sepolia_chain_settings
+from .config import ChainSettings, make_op_chain_settings, make_base_chain_settings, make_base_sepolia_chain_settings, make_bsc_chain_settings
 from .helpers import normalize_address, MAX_UINT256, float_to_uint256, apply_slippage, get_future_timestamp
 from .abi import sugar, slipstream, price_oracle, router
 from .token import Token
@@ -344,3 +345,13 @@ class AsyncSepoliaBaseChain(AsyncChain, BaseSepoliaChainCommon):
 
 class BaseSepoliaChain(Chain, BaseSepoliaChainCommon):
     def __init__(self, **kwargs): super().__init__(make_base_sepolia_chain_settings(**kwargs))
+
+class BscChainCommon():
+    usdt: str = normalize_address("0x55d398326f99059fF775485246999027B3197955")
+    gobV2: str = normalize_address("0x558225E240D8C73dF754C48b330DE5f281ee99B9")
+
+class AsyncBscChain(AsyncChain, BscChainCommon):
+    def __init__(self, **kwargs): super().__init__(make_bsc_chain_settings(**kwargs))
+
+class BscChain(Chain, BscChainCommon):
+    def __init__(self, **kwargs): super().__init__(make_bsc_chain_settings(**kwargs))
