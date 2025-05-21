@@ -128,13 +128,13 @@ def make_bsc_chain_settings(**kwargs) -> ChainSettings:
     d = {
         "rpc_uri": "https://bsc-rpc.publicnode.com",
         "wrapped_native_token_addr": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", # WBNB
-        "sugar_contract_addr": "0xe70b7376dfEA62Ef5bE77f5b48F4ffCc2CBbDB48", # LpSugar
+        "sugar_contract_addr": "0x5F365287B7435a6EdCc92E49F3bc287e3466CbFA", # LpSugar
         "slipstream_contract_addr": "0x0A7f4c4b94226926980D4924f9111F590776C1ad", # Slipstream SugarHelper
-        "nfpm_contract_addr": "0xd1a63C19190D3B48d760E2A5AD8462FdCC0dfd3a", # NFPM from Slipstream deployment
+        "nfpm_contract_addr": "0xd84eD0B2EBeC09efC23Cdd3975de21D7D6B7D515", # NFPM from Slipstream deployment
         "price_oracle_contract_addr": ADDRESS_ZERO, # ! not deployed
-        "router_contract_addr": "0xe70642eCD92bB57F785d6185Dfe0a55f06c4318F", # Aerodrome Router
-        "token_addr": "0xF69B558bfB2215e26C001D30F80E9926168e6880", # GOB
+        "router_contract_addr": "0x38a6c73B953D836eF862293b6B672bAf656E96c5", # Aerodrome Router
+        "token_addr": "0x75331507C3E54bB3a8E23890b94a4cE10B7bE4C7", # GOB
         "stable_token_addr": "0x55d398326f99059fF775485246999027B3197955", # USDT
-        "connector_tokens_addrs": "0xF69B558bfB2215e26C001D30F80E9926168e6880,0x205f59C72385C82b2328FC1c7776640C8d10f836,0x767Dc7981a5d58539814110dEA8dd88857164fa1,0xa44319D6232afEAa21A38b040Ca095110ad76d38,0x53b6a051dD3193d4F80c1E66c56316af180755F6,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0x4fAd9b2458634B1E5D679732ca3f6C203e565B13", # GOBV2, tGOB v1, tBCH, tUSDT, tUSDC, WBNB, tETH
+        "connector_tokens_addrs": "0x75331507C3E54bB3a8E23890b94a4cE10B7bE4C7,0x205f59C72385C82b2328FC1c7776640C8d10f836,0x767Dc7981a5d58539814110dEA8dd88857164fa1,0xa44319D6232afEAa21A38b040Ca095110ad76d38,0x53b6a051dD3193d4F80c1E66c56316af180755F6,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c,0x4fAd9b2458634B1E5D679732ca3f6C203e565B13,0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d,0x55d398326f99059fF775485246999027B3197955", # GOBV2, tGOB v1, tBCH, tUSDT, tUSDC, WBNB, tETH, USDC, USDT
     }
     return make_settings("56", "Bsc", **{ **d, **kwargs })

@@ -352,7 +352,7 @@ class BaseSepoliaChain(Chain, BaseSepoliaChainCommon):
 
 class BscChainCommon():
     usdt: str = normalize_address("0x55d398326f99059fF775485246999027B3197955")
-    gobV2: str = normalize_address("0xF69B558bfB2215e26C001D30F80E9926168e6880")
+    gobV2: str = normalize_address("0x75331507C3E54bB3a8E23890b94a4cE10B7bE4C7")
 
 class AsyncBscChain(AsyncChain, BscChainCommon):
     def __init__(self, **kwargs): super().__init__(make_bsc_chain_settings(**kwargs))
